@@ -1,4 +1,4 @@
-ï»¿package ì•Œê³ ë¦¬ì¦˜2ì£¼ì°¨;
+package ¾Ë°í¸®Áò2ÁÖÂ÷;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -22,9 +22,9 @@ public class prog_assign02 {
 		min.dist=dist;
 		for(int i=0;i<N;i++) {
 			if(list[i].path==-1)
-				min.seq[i]=index;
+				min.seq[N-1]=index;
 			else
-			min.seq[i]=list[i].path;
+			min.seq[list[i].path]=i;
 		}
 		}return true;
 		}
@@ -61,12 +61,13 @@ public class prog_assign02 {
 				long start = System.currentTimeMillis();
 				dist(0,0,0);
 				file.close();
+				System.out.println("input"+i+".txt");
 				System.out.println(min.dist);
 				for(int v=0;v<N;v++)
 					System.out.print(min.seq[v]+" ");
 				System.out.println();
 				long end = System.currentTimeMillis();
-				System.out.println( "ì‹¤í–‰ ì‹œê°„ : " + ( end - start )/1000.0 );
+				System.out.println( "½ÇÇà ½Ã°£ : " + ( end - start )/1000.0 );
 				min.dist=0;count=0;
 			}catch(FileNotFoundException e) {System.out.println("No file");
 			System.exit(0);}
